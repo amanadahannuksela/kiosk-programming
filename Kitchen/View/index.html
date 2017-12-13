@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Kitchen</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <script src="https://vuejs.org/js/vue.js"></script>
+    <script src="../js/kitchen.js" defer></script>
 </head>
 <body>
     <div class="topBar">
@@ -15,283 +17,21 @@
     <div id="main">
         <div id="left">
             <div id="order_overview">
-                <div class="order_unit">
-                    <h3>Order#123456</h3>
+                <div id="order_unit" v-for="(item, key) in orders" v-if="!item.done" v-on:click="enter(key)">
+                    <h3>Order{{key}}</h3>
                     <table>
                         <tbody>
-                            <tr>
+                            <tr v-for="item in item.drinks">
                                 <td>
-                                    <b>Orange Juice</b>
+                                    <b>{{item.name}}</b>
                                 </td>
                                 <td>
-                                    S
+                                    {{item.size}}
                                 </td>
                                 <td>
-                                    3
+                                    {{item.account}}
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <b>Apple Juice</b>
-                                </td>
-                                <td>
-                                    S
-                                </td>
-                                <td>
-                                    2
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>DIY</b>
-                                </td>
-                                <td>
-                                    L
-                                </td>
-                                <td>
-                                    2
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="order_unit">
-                    <h3>Order#123456</h3>
-                    <table>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <b>Orange Juice</b>
-                            </td>
-                            <td>
-                                S
-                            </td>
-                            <td>
-                                3
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>Apple Juice</b>
-                            </td>
-                            <td>
-                                S
-                            </td>
-                            <td>
-                                2
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>DIY</b>
-                            </td>
-                            <td>
-                                L
-                            </td>
-                            <td>
-                                2
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="order_unit">
-                    <h3>Order#123456</h3>
-                    <table>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <b>Orange Juice</b>
-                            </td>
-                            <td>
-                                S
-                            </td>
-                            <td>
-                                3
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>Apple Juice</b>
-                            </td>
-                            <td>
-                                S
-                            </td>
-                            <td>
-                                2
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>DIY</b>
-                            </td>
-                            <td>
-                                L
-                            </td>
-                            <td>
-                                2
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="order_unit">
-                    <h3>Order#123456</h3>
-                    <table>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <b>Orange Juice</b>
-                            </td>
-                            <td>
-                                S
-                            </td>
-                            <td>
-                                3
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>Apple Juice</b>
-                            </td>
-                            <td>
-                                S
-                            </td>
-                            <td>
-                                2
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>DIY</b>
-                            </td>
-                            <td>
-                                L
-                            </td>
-                            <td>
-                                2
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="order_unit">
-                    <h3>Order#123456</h3>
-                    <table>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <b>Orange Juice</b>
-                            </td>
-                            <td>
-                                S
-                            </td>
-                            <td>
-                                3
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>Apple Juice</b>
-                            </td>
-                            <td>
-                                S
-                            </td>
-                            <td>
-                                2
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>DIY</b>
-                            </td>
-                            <td>
-                                L
-                            </td>
-                            <td>
-                                2
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="order_unit">
-                    <h3>Order#123456</h3>
-                    <table>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <b>Orange Juice</b>
-                            </td>
-                            <td>
-                                S
-                            </td>
-                            <td>
-                                3
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>Apple Juice</b>
-                            </td>
-                            <td>
-                                S
-                            </td>
-                            <td>
-                                2
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>DIY</b>
-                            </td>
-                            <td>
-                                L
-                            </td>
-                            <td>
-                                2
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="order_unit">
-                    <h3>Order#123456</h3>
-                    <table>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <b>Orange Juice</b>
-                            </td>
-                            <td>
-                                S
-                            </td>
-                            <td>
-                                3
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>Apple Juice</b>
-                            </td>
-                            <td>
-                                S
-                            </td>
-                            <td>
-                                2
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>DIY</b>
-                            </td>
-                            <td>
-                                L
-                            </td>
-                            <td>
-                                2
-                            </td>
-                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -299,56 +39,27 @@
         </div>
         <div id="right">
             <div id="detailed_order">
-                <h3>Order#123456</h3>
+                <h3>Order{{ID}}</h3>
                 <table>
                     <tbody>
-                    <tr>
+                    <tr v-for="drink in order.drinks">
                         <td>
-                            <b>Orange Juice</b>
-                        </td>
-                        <td>
-                            S
-                        </td>
-                        <td>
-                            3
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <b>Apple Juice</b>
-                        </td>
-                        <td>
-                            S
-                        </td>
-                        <td>
-                            2
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <b>DIY</b>
-                            <ul>
-                                <li>Apple</li>
-                                <li>Orange</li>
-                                <li>Cherry</li>
-                            </ul>
-                            <ul>
-                                <li>Apple</li>
-                                <li>Apple</li>
-                                <li>Cherry</li>
+                            <b>{{drink.name}}</b>
+                            <ul v-for="items in drink.ingredients" v-if="drink.ingredients.length">
+                                <li v-for="item in items.ingredient">{{item}}</li>
                             </ul>
                         </td>
                         <td>
-                            L
+                            {{drink.size}}
                         </td>
                         <td>
-                            2
+                            {{drink.account}}
                         </td>
                     </tr>
                     </tbody>
                 </table>
             </div>
-            <button id="finished_button">Done</button>
+            <button id="finished_button" v-on:click="finish()">Done</button>
         </div>
     </div>
 </body>

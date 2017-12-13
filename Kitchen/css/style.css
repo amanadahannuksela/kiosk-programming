@@ -68,7 +68,7 @@ body{
     /*padding: 1em;*/
 }
 
-.order_unit{
+#order_unit{
     width:15em;
     height:15em;
     background-color: gold;
@@ -80,18 +80,18 @@ body{
     border-radius: 5px;
 }
 
-.order_unit h3{
+#order_unit h3{
     margin-bottom: 0;
     /*letter-spacing: 0.2em;*/
     text-align: center;
 }
 
-.order_unit table{
+#order_unit table{
     margin: 1em 10%;
     width: 80%;
 }
 
-.order_unit table td{
+#order_unit table td{
     height: 1.2em;
 }
 
