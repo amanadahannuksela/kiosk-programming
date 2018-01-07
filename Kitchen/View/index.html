@@ -17,10 +17,11 @@
     <div id="main">
         <div id="left">
             <div id="order_overview">
-                <div id="order_unit" v-for="(item, key) in orders" v-if="!item.done" v-on:click="enter(key)">
+                <div class="order_unit"  v-for="(item, key) in orders" v-if="!item.done" v-bind:class="key" v-on:mousedown= "enter(key)">
                     <h3>Order{{key}}</h3>
-                    <table>
-                        <tbody>
+                    <div id="order_body">
+                        <table>
+                            <tbody>
                             <tr v-for="item in item.drinks">
                                 <td>
                                     <b>{{item.name}}</b>
@@ -32,34 +33,36 @@
                                     {{item.account}}
                                 </td>
                             </tr>
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="right">
             <div id="detailed_order">
-                <h3>Order{{ID}}</h3>
-                <table>
-                    <tbody>
-                    <tr v-for="drink in order.drinks">
-                        <td>
+                <h3><span>Order<br></span>{{ID}}</h3>
+                <hr>
+                <div id="order_table">
+                    <div id="table_row" v-for="drink in order.drinks">
+                        <div id="left_column">
                             <b>{{drink.name}}</b>
                             <ul v-for="items in drink.ingredients" v-if="drink.ingredients.length">
                                 <li v-for="item in items.ingredient">{{item}}</li>
                             </ul>
-                        </td>
-                        <td>
-                            {{drink.size}}
-                        </td>
-                        <td>
-                            {{drink.account}}
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                        </div>
+                        <div id="right_column">
+                            <div id="column_2">
+                                {{drink.size}}
+                            </div>
+                            <div align="right" id="column_3">
+                                {{drink.account}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <button id="finished_button" v-on:click="finish()">Done</button>
+            <div id="finished_button" v-on:click="finish()"></div>
         </div>
     </div>
 </body>
